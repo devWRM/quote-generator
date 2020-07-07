@@ -5,7 +5,7 @@
 require_relative "../config/environment"
 
 puts "Hello World"
-starter = CLI.new
+starter = CLI.new("https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=100")
 starter.start
 
 # binding.pry
