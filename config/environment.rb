@@ -2,7 +2,7 @@
 require "pry"
 require "httparty"
 
-require "./lib/models/quote.rb"
-require "./lib/services/api.rb"
-require "./lib/services/cli.rb"
+require_relative "../lib/models/quote.rb"
+require_relative "../lib/services/api.rb"
+require_relative "../lib/services/cli.rb"
 
