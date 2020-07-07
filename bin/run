@@ -7,3 +7,5 @@ require_relative "../config/environment"
 puts "Hello World"
 starter = API.new("https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=100")
 starter.get_quotes
+
+binding.pry
