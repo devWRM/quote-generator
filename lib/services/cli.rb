@@ -47,7 +47,8 @@ class CLI
             author_ordered_quotes
             menu
         elsif input == 4
-
+            authors
+            menu
         elsif input == 5
 
         elsif input == 6
@@ -65,7 +66,6 @@ class CLI
             puts "Please enter a valid number 0-6"
             return menu
         end
-
     end
 
     def daily_quote
@@ -115,7 +115,18 @@ class CLI
             end
 
         end
-        nil
+    end
+
+    def authors
+        authors = Quote.all.map do |quote|
+            quote.author
+        end
+        uniq_authors = authors.uniq.sort
+
+        puts "KNOWN AUTHORS: #{uniq_authors.count}"
+        uniq_authors.each do |author|
+            puts author
+        end
     end
 
 
@@ -126,8 +137,8 @@ class CLI
 
 
 
-# def uniq_quotes
-# end
+        # def uniq_quotes
+        # end
 
 
 end
