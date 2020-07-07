@@ -53,7 +53,8 @@ class CLI
             quotes
             menu
         elsif input == 6
-
+            all_quotes_for_one_author
+            menu
         end
     end
 
@@ -146,25 +147,23 @@ class CLI
         end
     end
 
-    def all_quotes_for_one_author(name)
-
+    def all_quotes_for_one_author
+        authors
+        puts "COPY AND PASTE AN AUTHOR'S NAME OR ENTER A NAME BELOW"
+        user_input = gets.chomp
 
         author_quotes = Quote.all.select do |quote|
-            quote.author == name
+            quote.author.upcase == user_input.upcase
         end
 
         if author_quotes == []
-            puts "There are currently no quotes for #{name}"
-        else
-
-            
-                puts "ALL QUOTES BY #{name.upcase}"
+            puts "There are currently no quotes for #{user_input}"
+        else                    
+                puts "ALL QUOTES BY #{user_input.upcase}"
                 author_quotes.each do |quote|
                     puts quote.text
                 end
-
-        end
-
+        end       
     end
 
 
