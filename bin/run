@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+# To run file without "ruby", drop the file's .rb and type in text above & iTTT: chmod 777 bin/run
+
 require_relative "../config/environment"
 
 puts "Hello World"
+starter = API.new("https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=100")
+starter.get_quotes
