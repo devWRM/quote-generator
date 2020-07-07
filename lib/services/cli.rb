@@ -118,14 +118,18 @@ class CLI
         end
     end
 
-    def authors
+    def all_authors
         authors = Quote.all.map do |quote|
             quote.author
         end
-        uniq_authors = authors.uniq.sort
+        authors.uniq.sort
+    end
 
-        puts "KNOWN AUTHORS TOTAL: #{uniq_authors.count}"
-        uniq_authors.each do |author|
+    def authors
+        authors = all_authors
+
+        puts "KNOWN AUTHORS TOTAL: #{authors.count}"
+        authors.each do |author|
             puts author
         end
     end
@@ -142,11 +146,26 @@ class CLI
         end
     end
 
+    def all_quotes_for_one_author(name)
 
 
+        author_quotes = Quote.all.select do |quote|
+            quote.author == name
+        end
 
+        if author_quotes == []
+            puts "There are currently no quotes for #{name}"
+        else
 
+            
+                puts "ALL QUOTES BY #{name.upcase}"
+                author_quotes.each do |quote|
+                    puts quote.text
+                end
 
+        end
+
+    end
 
 
 
