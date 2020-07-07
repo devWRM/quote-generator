@@ -38,9 +38,11 @@ class CLI
         if input == 0
             puts "Parting is such sweet sorrow... -Juliet (Shakespear's Romeo and Juliet)"
         elsif input == 1
-
+            daily_quote           
+            menu
         elsif input == 2
-
+            print_all_quotes_and_authors
+            menu
         elsif input == 3
 
         elsif input == 4
@@ -50,8 +52,6 @@ class CLI
         elsif input == 6
 
         end
-
-
     end
 
     def get_input
@@ -66,6 +66,32 @@ class CLI
         end
 
     end
+
+    def daily_quote
+        daily = Quote.all.sample
+
+        if daily.author == ""
+            puts "#{daily.text} -by Unknown"
+        else
+            puts "#{daily.text} -by #{daily.author}"
+        end
+    end
+
+    def print_all_quotes_and_authors
+        Quote.all.each do |quote|
+            if quote.author == ""
+                puts "#{quote.text} => by Unknown"
+            else
+                puts "#{quote.text} => by #{quote.author}"
+            end
+        end
+        nil
+    end
+
+
+
+
+
 
 
 
