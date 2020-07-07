@@ -41,10 +41,11 @@ class CLI
             daily_quote           
             menu
         elsif input == 2
-            print_all_quotes_and_authors
+            all_quotes_and_authors
             menu
         elsif input == 3
-
+            author_ordered_quotes
+            menu
         elsif input == 4
 
         elsif input == 5
@@ -77,13 +78,42 @@ class CLI
         end
     end
 
-    def print_all_quotes_and_authors
+    def all_quotes_and_authors
         Quote.all.each do |quote|
             if quote.author == ""
                 puts "#{quote.text} => by Unknown"
             else
                 puts "#{quote.text} => by #{quote.author}"
             end
+        end
+        nil
+    end
+
+    def all_quotes_ordered_by_author
+        list = Quote.all.sort do |a, b|
+            a.author <=> b.author
+        end
+        list
+    end
+
+    def author_ordered_quotes
+        current_author = nil
+        all_quotes_ordered_by_author.each do |quote|
+           
+            if current_author != quote.author
+                current_author = quote.author
+                    # Handles unkown for ""
+                    if quote.author == ""                  
+                        puts "ALL QUOTES BY UNKOWN"
+                        puts "  #{quote.text}"
+                    else
+                        puts "ALL QUOTES BY #{quote.author.upcase}"
+                        puts "  #{quote.text}"
+                    end
+            else
+                puts "  #{quote.text}"
+            end
+
         end
         nil
     end
@@ -96,8 +126,8 @@ class CLI
 
 
 
-
-
+# def uniq_quotes
+# end
 
 
 end
