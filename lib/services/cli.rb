@@ -50,7 +50,8 @@ class CLI
             authors
             menu
         elsif input == 5
-
+            quotes
+            menu
         elsif input == 6
 
         end
@@ -123,9 +124,21 @@ class CLI
         end
         uniq_authors = authors.uniq.sort
 
-        puts "KNOWN AUTHORS: #{uniq_authors.count}"
+        puts "KNOWN AUTHORS TOTAL: #{uniq_authors.count}"
         uniq_authors.each do |author|
             puts author
+        end
+    end
+
+    def quotes
+        quotes = Quote.all.map do |quote|
+            quote.text
+        end
+        uniq_quotes = quotes.uniq
+
+        puts "ALL QUOTES TOTAL: #{uniq_quotes.count}"
+        uniq_quotes.each do |quote_text|
+            puts quote_text
         end
     end
 
