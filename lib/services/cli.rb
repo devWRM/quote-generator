@@ -36,7 +36,7 @@ class CLI
         get_input
 
         if input == 0
-            puts "Parting is such sweet sorrow... -Juliet (Shakespear's Romeo and Juliet)"
+            return puts "Parting is such sweet sorrow... -Juliet (Shakespear's Romeo and Juliet)"
         elsif input == 1
             daily_quote           
             menu
@@ -83,9 +83,9 @@ class CLI
     def all_quotes_and_authors
         Quote.all.each do |quote|
             if quote.author == ""
-                puts "#{quote.text} => by Unknown"
+                puts "#{quote.text} => by UNKNOWN"
             else
-                puts "#{quote.text} => by #{quote.author}"
+                puts "#{quote.text} => by #{quote.author.upcase}"
             end
         end
         nil
