@@ -21,7 +21,14 @@ class CLI
     end
 
     def greeting
-        puts "Welcome to the Words of Wisdom Quote Generator."
+        puts ""
+        puts "*****"
+        puts ""
+        puts "GREETINGS from the Words of Wisdom quote generator! We have quotes to inspire and guide you through this challenging day."
+        puts "To get started on the path to peace and perspicacity, please pick a number from the menu and enter it below."
+        puts ""
+        puts "*****"
+        puts ""
     end
 
     def menu
