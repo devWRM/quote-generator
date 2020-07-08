@@ -32,18 +32,18 @@ class CLI
     end
 
     def menu
-        puts "Enter 1 to get a daily quote"
-        puts "Enter 2 to get all quotes and authors"
-        puts "Enter 3 to get all quotes ordered by authors"
-        puts "Enter 4 to get a list of all authors"
-        puts "Enter 5 to get all quotes"
-        puts "Enter 6 to get all quotes by one author"
-        puts "Enter 0 to end this Words of Wisdom session"    
+        puts "Enter 1 to see a daily quote"
+        puts "Enter 2 to see all quotes and authors"
+        puts "Enter 3 to see all quotes ordered by authors"
+        puts "Enter 4 to see a list of all authors"
+        puts "Enter 5 to see all quotes"
+        puts "Enter 6 to see all quotes by one author"
+        puts "Enter 0 to end this session of Words of Wisdom"    
 
         get_input
 
         if input == 0
-            return puts "Parting is such sweet sorrow... -Juliet (Shakespear's Romeo and Juliet)"
+            adios
         elsif input == 1
             daily_quote           
             menu
@@ -72,7 +72,9 @@ class CLI
         if ["0", "1", "2", "3", "4", "5", "6"].include?(user_input)
             self.input = user_input.to_i
         else
-            puts "Please enter a valid number 0-6"
+            puts ""
+            puts "PLEAS ENTER A VALID NUMBER 0 - 6"
+            puts ""
             return menu
         end
     end
@@ -171,6 +173,10 @@ class CLI
                     puts quote.text
                 end
         end       
+    end
+
+    def adios
+        return puts "Parting is such sweet sorrow... -Juliet (Shakespear's Romeo and Juliet)"
     end
 
 
