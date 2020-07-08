@@ -38,7 +38,8 @@ class CLI
         puts "Enter 4 to see a list of all authors"
         puts "Enter 5 to see all quotes"
         puts "Enter 6 to see all quotes by one author"
-        puts "Enter 0 to end this session of Words of Wisdom"    
+        puts "Enter 0 to end this session of Words of Wisdom"
+        puts "" 
 
         get_input
 
@@ -99,8 +100,10 @@ class CLI
         Quote.all.each do |quote|
             if quote.author == ""
                 puts "#{quote.text} => by UNKNOWN"
+                puts ""
             else
                 puts "#{quote.text} => by #{quote.author.upcase}"
+                puts ""
             end
         end
         nil
