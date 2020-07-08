@@ -151,7 +151,7 @@ class CLI
     def authors
         authors = all_authors
 
-        puts "KNOWN AUTHORS TOTAL: #{authors.count}"
+        puts "TOTAL OF ALL KNOWN AUTHORS: #{authors.count}"
         authors.each do |author|
             puts author
         end
@@ -163,7 +163,7 @@ class CLI
         end
         uniq_quotes = quotes.uniq
 
-        puts "ALL QUOTES TOTAL: #{uniq_quotes.count}"
+        puts "TOTAL OF ALL QUOTES: #{uniq_quotes.count}"
         uniq_quotes.each do |quote_text|
             puts quote_text
         end
