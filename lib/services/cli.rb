@@ -194,7 +194,13 @@ class CLI
     end
 
     def adios
-        puts "Parting is such sweet sorrow... -Juliet (Shakespear's Romeo and Juliet)"
+        puts "--------------------------------------------------------------------------------"
+        puts "********************************************************************************"
+        puts ""
+        puts "Parting is such sweet sorrow...  -by Juliet (Shakespeare's 'Romeo and Juliet')"
+        puts ""
+        puts "********************************************************************************"
+        puts "--------------------------------------------------------------------------------"
     end
 
 
