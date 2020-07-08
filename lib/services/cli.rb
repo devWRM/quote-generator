@@ -165,6 +165,7 @@ class CLI
         uniq_quotes = quotes.uniq
         puts ""
         puts "TOTAL OF ALL QUOTES: #{uniq_quotes.count}"
+        puts ""
         uniq_quotes.each do |quote_text|
             puts quote_text
             puts ""
