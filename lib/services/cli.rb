@@ -150,10 +150,11 @@ class CLI
 
     def authors
         authors = all_authors
-
+        puts ""
         puts "TOTAL OF ALL KNOWN AUTHORS: #{authors.count}"
         authors.each do |author|
             puts author
+            puts ""
         end
     end
 
@@ -162,10 +163,11 @@ class CLI
             quote.text
         end
         uniq_quotes = quotes.uniq
-
+        puts ""
         puts "TOTAL OF ALL QUOTES: #{uniq_quotes.count}"
         uniq_quotes.each do |quote_text|
             puts quote_text
+            puts ""
         end
     end
 
@@ -179,8 +181,10 @@ class CLI
         end
 
         if author_quotes == []
+            puts ""
             puts "There are currently no quotes for #{user_input}"
-        else                    
+        else              
+                puts ""      
                 puts "ALL QUOTES BY #{user_input.upcase}"
                 author_quotes.each do |quote|
                     puts quote.text
