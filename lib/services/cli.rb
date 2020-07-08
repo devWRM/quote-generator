@@ -43,7 +43,7 @@ class CLI
         get_input
 
         if input == 0
-            adios
+            return adios
         elsif input == 1
             daily_quote           
             menu
@@ -176,7 +176,7 @@ class CLI
     end
 
     def adios
-        return puts "Parting is such sweet sorrow... -Juliet (Shakespear's Romeo and Juliet)"
+        puts "Parting is such sweet sorrow... -Juliet (Shakespear's Romeo and Juliet)"
     end
 
 
