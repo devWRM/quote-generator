@@ -83,9 +83,15 @@ class CLI
         daily = Quote.all.sample
 
         if daily.author == ""
-            puts "#{daily.text} -by Unknown"
+            puts ""
+            puts daily.text
+            puts "          -by Unknown"
+            puts ""
         else
-            puts "#{daily.text} -by #{daily.author}"
+            puts ""
+            puts daily.text
+            puts "          -by #{daily.author}"
+            puts ""
         end
     end
 
