@@ -32,6 +32,7 @@ class CLI
     end
 
     def menu
+        puts ""
         puts "Enter 1 to see a daily quote"
         puts "Enter 2 to see all quotes and authors"
         puts "Enter 3 to see all quotes ordered by authors"
@@ -122,11 +123,14 @@ class CLI
            
             if current_author != quote.author
                 current_author = quote.author
+
                     # Handles unkown for ""
-                    if quote.author == ""                  
+                    if quote.author == ""
+                        puts ""               
                         puts "ALL QUOTES BY UNKOWN"
                         puts "  #{quote.text}"
                     else
+                        puts ""
                         puts "ALL QUOTES BY #{quote.author.upcase}"
                         puts "  #{quote.text}"
                     end
