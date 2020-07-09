@@ -175,8 +175,14 @@ class CLI
     def all_quotes_for_one_author
         authors
         puts "COPY AND PASTE AN AUTHOR'S NAME OR ENTER A NAME BELOW"
+        puts "TO SEE ALL QUOTES BY UNKNOWN AUTHORS, PRESS ENTER"
         puts ""
         user_input = gets.chomp
+
+        unknown = nil
+        if user_input == ""
+            unknown = user_input
+        end
 
         author_quotes = Quote.all.select do |quote|
             quote.author.upcase == user_input.upcase
@@ -184,7 +190,13 @@ class CLI
 
         if author_quotes == []
             puts ""
-            puts "There are currently no quotes for #{user_input}"
+            puts "THERE ARE CURRENTLY NO QUOTES FOR #{user_input}"
+        elsif unknown != nil
+            puts ""
+            puts "ALL QUOTES BY UNKNOWN AUTHORS"
+            author_quotes.each do |quote|
+                puts quote.text
+            end
         else              
                 puts ""      
                 puts "ALL QUOTES BY #{user_input.upcase}"
