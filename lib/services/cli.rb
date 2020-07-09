@@ -43,9 +43,7 @@ class CLI
 
         get_input
 
-        if input == 0
-            adios
-        elsif input == 1
+        if input == 1
             daily_quote           
             menu
         elsif input == 2
@@ -63,7 +61,10 @@ class CLI
         elsif input == 6
             all_quotes_for_one_author
             menu
+        else
+            adios
         end
+        
     end
 
     def get_input
@@ -174,6 +175,7 @@ class CLI
     def all_quotes_for_one_author
         authors
         puts "COPY AND PASTE AN AUTHOR'S NAME OR ENTER A NAME BELOW"
+        puts ""
         user_input = gets.chomp
 
         author_quotes = Quote.all.select do |quote|
@@ -203,7 +205,7 @@ class CLI
         puts "--------------------------------------------------------------------------------"
         puts ""
 
-        exit
+        # exit
     end
 
 
