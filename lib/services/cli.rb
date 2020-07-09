@@ -10,7 +10,6 @@ class CLI
 
     def start
 
-
         greeting
 
         quotables = API.new(self.url)
@@ -45,7 +44,7 @@ class CLI
         get_input
 
         if input == 0
-            return adios
+            adios
         elsif input == 1
             daily_quote           
             menu
@@ -75,7 +74,7 @@ class CLI
             self.input = user_input.to_i
         else
             puts ""
-            puts "PLEAS ENTER A VALID NUMBER 0 - 6"
+            puts "PLEASE ENTER A VALID NUMBER 0 - 6"
             puts ""
             return menu
         end
@@ -194,6 +193,7 @@ class CLI
     end
 
     def adios
+        puts ""
         puts "--------------------------------------------------------------------------------"
         puts "********************************************************************************"
         puts ""
@@ -201,6 +201,9 @@ class CLI
         puts ""
         puts "********************************************************************************"
         puts "--------------------------------------------------------------------------------"
+        puts ""
+
+        exit
     end
 
 
